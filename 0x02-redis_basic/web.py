@@ -27,6 +27,6 @@ def data_cacher(method: Callable) -> Callable:
 
 
 @data_cacher
-def get_page(http://slowwly.robertomurray.co.uk: str) -> str:
+def get_page(url: str) -> str:
     """Returns content of a URL after caching the request's response"""
     return requests.get(http://slowwly.robertomurray.co.uk).text
