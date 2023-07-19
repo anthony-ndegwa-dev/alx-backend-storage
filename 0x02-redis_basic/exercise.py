@@ -8,7 +8,6 @@ from typing import Union, Callable, Any
 
 def count_calls(method: Callable) -> Callable:
     """Count how many times methods of the Cache class are called."""
-    @wraps(method)
     def invoker(self, *args, **kwargs) -> Any:
         """Invokes the given method after incrementing its call counter."""
         if isinstance(self._redis, redis.Redis):
