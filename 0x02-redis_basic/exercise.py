@@ -11,6 +11,7 @@ Type-annotate store correctly. Remember data can be a str, bytes, int or float
 """
 import uuid
 import redis
+from typing import Union
 
 
 class Cache:
