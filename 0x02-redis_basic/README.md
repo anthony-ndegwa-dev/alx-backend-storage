@@ -52,7 +52,7 @@
 
     In call_history, use the decorated function’s qualified name and append ":inputs" and ":outputs" to create input and output list keys, respectively.
 
-call_history has a single parameter named method that is a Callable and returns a Callable.
+    call_history has a single parameter named method that is a Callable and returns a Callable.
 
     In the new function that the decorator will return, use rpush to append the input arguments. Remember that Redis can only store strings, bytes and numbers. Therefore, we can simply use str(args) to normalize. We can ignore potential kwargs for now.
 
