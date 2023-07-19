@@ -17,6 +17,7 @@ def count_calls(method: Callable) -> Callable:
         return method(self, *args, **kwargs)
     return invoker
 
+
 def call_history(method: Callable) -> Callable:
     """Tracks the call on methods in Cache class."""
     @wraps(method)
@@ -31,6 +32,7 @@ def call_history(method: Callable) -> Callable:
             self._redis.rpush(out_key, output)
         return output
     return invoker
+
 
 def replay(fn: Callable) -> None:
     """Get call history of methods in Cache class."""
@@ -87,4 +89,3 @@ class Cache:
     def get_int(self, key: str) -> int:
         """Get an integer value from a Redis data storage."""
         return self.get(key, lambda x: int(x))
-
